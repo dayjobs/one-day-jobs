@@ -1,0 +1,43 @@
+<div class="offset-3 job-item row">
+    <div class="col-md-2 job-item-user-info">
+        <div>
+            <img ng-src="{{ job.author.profile.picture }}" alt="User photo" class="img-circle">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <strong class="job-item-name">{{ job.name }}</strong>
+        <div class="line2"></div>
+        <div class="job-item-description">{{ job.description }}</div>
+        <br>
+        <div class="job-item-location">
+            <strong><span class="glyphicon glyphicon-map-marker"></span> Location:</strong>
+            {{ job.date }}
+        </div>
+
+    </div>
+    <div class="col-md-4 job-item-info">
+        <strong class="text-success size16"> RM {{ job.salary}}</strong><span> Per hour</span>
+
+        <div ng-show="trip.acceptCreditCard || trip.acceptCash" class="">
+            <strong class="cs-green-text ng-binding">Payment Methods</strong><br><br>
+
+            <div class="row" style="margin-bottom: 14px;">
+                <div class="col-md-2 ng-hide" ng-show="trip.acceptCreditCard">
+                    <div class="icon-icon-payment-card ng-scope" tooltip="Credit Card"></div>
+                </div>
+
+                <div class="col-md-2" ng-show="trip.acceptCash">
+                    <div class="icon-icon-payment-money ng-scope" tooltip="Cash"></div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <span class="badge green-badge">{{job.hours}}</span> Hours
+        <br><br>
+        <span class="badge green-badge">{{job.slots_count}}</span> Total slots
+        <br><br>
+        <span class="badge green-badge">{{job.slots_left}}</span> Available slots
+        <br><br>
+    </div>
+</div>

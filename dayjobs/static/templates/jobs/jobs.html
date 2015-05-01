@@ -1,0 +1,15 @@
+  <div class="row" ng-cloak>
+    <div ng-repeat="job in jobs">
+      <div class="col s12">
+        <ul class="collection">
+          <job job="job"></job>
+        </u>
+      </div>
+    </div>
+
+    <div ng-hide="jobs && jobs.length">
+      <div class="col s12 no-jobs-here">
+        <em>The are no jobs here.</em>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,95 @@
+<div ng-include src="'/static/templates/layout/navbar-transparent.html'"></div>
+
+<header ng-style="{'background-image':'url(http://ironsummitmedia.github.io/startbootstrap-creative/img/header.jpg)'}">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1>Recruit the right people for your events</h1>
+            <hr>
+            <p>1 Day Jobs is an online hub for jobs that are one-off and last either only one day or less than two weeks</p>
+            <a href="#learnmore" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+        </div>
+    </div>
+</header>
+
+
+<div class="header-search">
+    <div class="container">
+        <form role="form" name="searchForm">
+            <div class="row">
+                <div class="col-md-7 col-custom">
+                    <div class="form-group">
+                        <input type="text" class="form-control"  placeholder="Where do you want to work?">
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-custom">
+                    <div class="form-group">
+                        <input type="date" class="form-control" placeholder="Date">
+                    </div>
+                </div>
+                <div class="col-md-2 col-custom">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" ng-click="goToSearch()" >
+                            <span class="glyphicon glyphicon-search"></span> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<section id="freshjobs">
+    <div class="container">
+        <div class="row list-header">
+            <div class="col-sm-6 list-header-title"><h3 class="strong">Fresh Jobs</h3></div>
+            <div class="col-sm-6 list-header-extra text-right"><a href="#"><h3>see more</h3></a></div>
+        </div>
+        <div ng-repeat="item in vm.fresh_jobs">
+          <job job="item"></job>
+        </div>
+         <div class="row" ng-hide="vm.fresh_jobs && vm.fresh_jobs.length">
+          <div class="col-sm-12 no-fresh_jobs-here">
+            <em>The are no fresh_jobs here.</em>
+          </div>
+        </div>
+    </div>
+</section>
+
+<section id="learnmore">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">How 1 Day Job Works</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="info-box">
+                    <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                    <h3>Do something</h3>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo efficitur purus, non sodales elit.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="info-box">
+                    <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                    <h3>Do something</h3>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo efficitur purus, non sodales elit.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+                <div class="info-box">
+                    <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                    <h3>Do something</h3>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo efficitur purus, non sodales elit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div ng-include src="'/static/templates/layout/footer.html'"></div>

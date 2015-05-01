@@ -1,0 +1,48 @@
+{% load compress %}
+{% load staticfiles %}
+
+{% compress js %}
+<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}" />
+<script type="text/javascript" src="{% static 'lib/jquery.easing.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/jquery.fittext.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/wow.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/dayjobs.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/angular/angular.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-cookies/angular-cookies.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/ngDialog/js/ngDialog.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-facebook/lib/angular-facebook.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-local-storage/dist/angular-local-storage.min.js' %}"></script>
+<script type='text/javascript' src="{% static 'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-relative-date/angular-relative-date.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-translate/angular-translate.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/snackbarjs/snackbar.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/dayjobs.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/dayjobs.config.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/dayjobs.routes.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/authentication/authentication.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/services/authentication.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/directives/debug.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/controllers/login.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/layout/layout.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/navbar.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/index.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/jobs/jobs.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/jobs/controllers/new-job.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/jobs/services/jobs.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/jobs/directives/jobs.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/jobs/directives/job.directive.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/utils/utils.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/utils/services/feed.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/utils/services/snackbar.service.js' %}"></script>
+{% endcompress %}

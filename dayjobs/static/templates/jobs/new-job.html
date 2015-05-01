@@ -1,0 +1,134 @@
+<div ng-include src="'/static/templates/layout/navbar.html'"></div>
+
+<div class="panel-light panel-body">
+  <div></div>
+  <div class="row row-space-top-6 row-space-6">
+    <div class="col-7 col-center text-center">
+      <h1 class="h2">Post a Job</h1>
+      <p class="text-lead">
+        1 Day Jobs lets you find your potential work force.
+      </p>
+    </div>
+  </div>
+  <div></div>
+</div>
+
+<div class="panel-body panel-medium">
+  <div class="container">
+      <form role="form" ng-submit="vm.submit()">
+          <div class="row">
+            <div class="col-md-3 text-right col-middle">
+              <div class="h4 text-light">
+                Name
+              </div>
+            </div>
+            <div class="col-md-7 col-custom">
+                <div class="form-group">
+                    <input type="text" class="form-control validate" placeholder="Event Crew, Registration" id="job_name" ng-model="vm.name">
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 text-right col-middle">
+              <div class="h4 text-light">
+                Description
+              </div>
+            </div>
+            <div class="col-md-7 col-custom">
+                <div class="form-group">
+                    <input type="text" class="form-control validate" placeholder="Helping in setting up the venue" id="job_description" ng-model="vm.description">
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 text-right col-middle">
+              <div class="h4 text-light">
+                Date
+              </div>
+            </div>
+            <div class="col-md-7 col-custom">
+                <div class="form-group">
+                    <input type=date class="form-control validate" placeholder="" id="job_date" ng-model="vm.date">
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 text-right col-middle">
+              <div class="h4 text-light">
+                Salary
+              </div>
+            </div>
+            <div class="col-md-3 col-custom">
+                <div class="form-group">
+                    <input type="text" class="form-control validate" placeholder="0" id="job_salary" ng-model="vm.salary">
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 text-right col-middle">
+              <div class="h4 text-light">
+                No. of Hours
+              </div>
+            </div>
+            <div class="col-md-3 col-custom">
+                <div class="form-group">
+                    <input type="text" class="form-control validate" placeholder="0" id="job_hours" ng-model="vm.hours">
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 text-right col-middle">
+              <div class="h4 text-light">
+                Slots
+              </div>
+            </div>
+            <div class="col-md-3 col-custom">
+                <div class="form-group">
+                    <input type="text" class="form-control validate" placeholder="0" id="job_slots" ng-model="vm.slots">
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2 col-custom col-md-offset-3">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+                </div>
+            </div>
+          </div>
+      </form>
+  </div>
+
+  <div class="container panel-body">
+      <div class="row">
+          <div class="col-lg-4 col-md-6 text-center">
+              <div class="info-box">
+                  <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                  <h3>Do something</h3>
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo efficitur purus, non sodales elit.</p>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 text-center">
+              <div class="info-box">
+                  <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                  <h3>Do something</h3>
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo efficitur purus, non sodales elit.</p>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 text-center">
+              <div class="info-box">
+                  <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                  <h3>Do something</h3>
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo efficitur purus, non sodales elit.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div ng-include src="'/static/templates/layout/footer.html'"></div>
