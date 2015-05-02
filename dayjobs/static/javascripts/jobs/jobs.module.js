@@ -11,7 +11,7 @@
     ]);
 
   angular
-    .module('dayjobs.jobs.controllers', []);
+    .module('dayjobs.jobs.controllers', ['ngMap', 'geolocation']);
 
   angular
     .module('dayjobs.jobs.directives', ['ngDialog']);

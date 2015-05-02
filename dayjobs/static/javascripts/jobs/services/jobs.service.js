@@ -46,7 +46,7 @@
     * @returns {Promise}
     * @memberOf dayjobs.jobs.services.jobs
     */
-     function create(name, description, date, salary, hours, slots) {
+     function create(name, description, location, location_coords,  date, salary, hours, slots) {
       return $http({method: 'POST', url: '/api/v1/jobs',
               headers: {
                 'Authorization': 'Bearer facebook ' + localStorageService.get('token')
@@ -54,6 +54,8 @@
               data: {
                 'name': name,
                 'description': description,
+                'location': location,
+                'location_coords': location_coords,
                 'date': date,
                 'salary': salary,
                 'hours': hours,
@@ -64,13 +66,13 @@
 
     /**
      * @name get
-     * @desc Get the Jobs of a given user
-     * @param {string} username The username to get Jobs for
+     * @desc Get the Jobs
+     * @param {string} slug The slug to get Jobs for
      * @returns {Promise}
      * @memberOf dayjobs.jobs.services.Jobs
      */
-    function get(username) {
-      return $http.get('/api/v1/users/' + username + '/jobs');
+    function get(slug) {
+      return $http.get('/api/v1/jobs/' + slug);
     }
 
     /**

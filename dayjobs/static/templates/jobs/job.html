@@ -1,3 +1,4 @@
+<a ng-href="{{ job.job_url }}">
 <div class="offset-3 job-item row">
     <div class="col-md-2 job-item-user-info">
         <div>
@@ -11,8 +12,13 @@
         <br>
         <div class="job-item-location">
             <strong><span class="glyphicon glyphicon-map-marker"></span> Location:</strong>
-            {{ job.date }}
+            {{ job.location }}
         </div>
+        <div class="job-item-date">
+            <strong><span class="glyphicon glyphicon-calendar"></span> Date:</strong>
+            {{ job.day }}
+        </div>
+
 
     </div>
     <div class="col-md-4 job-item-info">
@@ -41,3 +47,4 @@
         <br><br>
     </div>
 </div>
+</a>

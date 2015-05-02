@@ -20,6 +20,10 @@
       controller: 'NewJobController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/jobs/new-job.html',
+    }).when('/jobs/:slug', {
+      controller: 'JobDetailController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/jobs/job-detail.html'
     }).otherwise('/');
   }
 })();

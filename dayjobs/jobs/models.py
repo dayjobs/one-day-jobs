@@ -19,6 +19,8 @@ class Job(models.Model):
 
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=140)
+    location = models.TextField(null=True, blank=True)
+    location_coords = models.TextField(null=True, blank=True)
     hours = models.FloatField (default=0)
     salary = models.FloatField (default=0)
     day = models.CharField(max_length=10, blank=True)
