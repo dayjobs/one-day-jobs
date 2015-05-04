@@ -4,6 +4,11 @@
  * Made By Ryan Wong
  */
 
+ .navbar-brand img {
+    max-width:100px;
+    margin-top: -7px;
+ }
+
 .avatar-img
 {
     position: relative;
@@ -138,6 +143,10 @@ section {
     margin-bottom: 30px;
 }
 
+.job-item-a {
+    color: #565a5c !important;
+}
+
 .job-item-user-info img {
     padding: 4px;
     background-color: rgb(255, 255, 255);
@@ -148,6 +157,152 @@ section {
 
 .job-item-name {
     font-size: 20px;
+}
+
+/**
+ * Pagination
+ *
+ * Made By Ryan Wong
+ */
+
+ .breadcrub {
+  margin-top: 40px;
+  color: #ccc;
+}
+
+ul.bcrumbs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.bcrumbs li {
+  float: left;
+  margin-left: 20px;
+}
+
+/**
+ * Jobs: detail;
+ *
+ * Made By Ryan Wong
+ */
+
+.pagecontainer {
+  background: #fff;
+  margin-top: 32px;
+  border: 1px solid #eee;
+  margin-bottom: 40px;
+}
+
+.details-slider {
+  height: auto;
+  overflow: hidden;
+  border-right: 1px solid #eee;
+}
+
+.clearfix {
+  float: none;
+  clear: both;
+}
+
+.block {
+  display: block;
+}
+.bold {
+  font-weight: 700;
+}
+
+.line4 {
+  background: #e8e8e8;
+  height: 1px;
+  margin: 17px 0 15px;
+  padding: 0;
+  display: block;
+}
+
+.bordertype1 {
+  height: 115px;
+  border-right: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  text-align: center;
+  color: #999;
+}
+
+.bordertype2 {
+  height: 115px;
+  border-bottom: 1px solid #e7e7e7;
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.bordertype3 {
+  height: 67px;
+  border-bottom: 1px solid #e7e7e7;
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.hpadding20 {
+  padding: 0 20px;
+}
+
+.padding20 {
+  padding: 30px;
+}
+
+.padding30 {
+  padding: 30px;
+}
+
+.size20 {
+  font-size: 20px!important;
+}
+
+.lh1 {
+  line-height: inherit!important;
+}
+
+.offset-0 {
+  padding-left: 0;
+  padding-right: 0!important;
+}
+
+.margbtm0 {
+  margin-bottom: 0!important;
+}
+
+.margbtm10 {
+  margin-bottom: 10px!important;
+}
+
+.margtop5 {
+  margin-top: 5px!important;
+}
+
+.cs-orange-text {
+  color: #f05f40;
+}
+
+.margtop20 {
+  margin-top: 20px!important;
+}
+
+.line3 {
+  background: #e8e8e8;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.grey {
+  color: #999;
+}
+
+.opensans {
+  font-family: "Open Sans";
 }
 
  /**

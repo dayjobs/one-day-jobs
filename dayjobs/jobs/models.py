@@ -23,7 +23,7 @@ class Job(models.Model):
     location_coords = models.TextField(null=True, blank=True)
     hours = models.FloatField (default=0)
     salary = models.FloatField (default=0)
-    day = models.CharField(max_length=10, blank=True)
+    date = models.DateTimeField()
     slug = models.SlugField()
     slots_count = models.IntegerField(default=0, blank=True)
     slots_left = models.IntegerField(default=0, blank=True)
@@ -41,5 +41,4 @@ class Job(models.Model):
     def save(self, *args, **kwargs):
         self.slug = uuslug(self.name, instance=self)
         self.job_url = '/jobs/' + self.slug
-        self.day = datetime.strftime(datetime.now().date(), '%m-%d-%Y')
         super(Job, self).save(*args, **kwargs)

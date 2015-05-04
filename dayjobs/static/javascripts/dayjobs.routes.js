@@ -24,6 +24,10 @@
       controller: 'JobDetailController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/jobs/job-detail.html'
+    }).when('/jobs', {
+      controller: 'JobsController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/jobs/job-list.html'
     }).otherwise('/');
   }
 })();
