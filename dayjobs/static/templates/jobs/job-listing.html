@@ -14,9 +14,15 @@
                 <tbody>
                   <tr ng-repeat="item in vm.job_matches">
                     <td class="user-name"><a ng-href="/users/{{ item.worker.username }}">{{ item.worker.first_name }} {{ item.worker.last_name }}</a></td>
-                    <td class="user-phone">{{ item.status }}</td>
-                    <td class="user-mobile">
-                      <button type="button" class="btn btn-sm btn-danger" ng-if="vm.isAuthenticated" ng-click="vm.accept(item.id, item.status)">
+                    <td class="user-phone" ng-if="item.status == 'W'">Applying</td>
+                    <td class="user-phone" ng-if="item.status == 'A'">Hired</td>
+                    <td class="user-mobile" ng-show="item.status == 'A'">
+                      <button type="button" class="btn btn-sm btn-danger" ng-if="vm.isAuthenticated" ng-click="vm.accept(item.id, item.status); item.status = 'W'">
+                        Cancel
+                      </button>
+                    </td>
+                    <td class="user-mobile" ng-show="item.status == 'W'">
+                      <button type="button" class="btn btn-sm btn-danger" ng-if="vm.isAuthenticated" ng-click="vm.accept(item.id, item.status); item.status = 'A'">
                         Accept
                       </button>
                     </td>

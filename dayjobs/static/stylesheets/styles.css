@@ -70,6 +70,7 @@
     color: #cacccd !important;
 }
 
+
 .subnav-text, .subnav-item {
     padding: 10px 14px;
     color: #fff;
@@ -474,4 +475,14 @@ ul.bcrumbs li {
 
  .sticky-wrap td.user-name {
   text-transform: capitalize;
+}
+
+.sticky-wrap  a {
+    text-decoration: none;
+    color: #565a5c;
+}
+
+.sticky-wrap  a:hover {
+    text-decoration: none;
+    color: #565a5c;
 }
