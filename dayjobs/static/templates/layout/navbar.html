@@ -18,7 +18,8 @@
                     <a href="#" class="dropdown-toggle profile-image" data-toggle="dropdown" data-ng-show="vm.isAuthenticated">
                     <img ng-src="{{ vm.user.profile.picture }}" class="img-circle avatar-img"> {{ vm.user.first_name }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><i class="fa fa-cog"></i> Account</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/listings">My Listings</a></li>
                         <li><a href="javascript:void(0)"
                             ng-click="vm.logout()">Logout</a></li>
                     </ul>

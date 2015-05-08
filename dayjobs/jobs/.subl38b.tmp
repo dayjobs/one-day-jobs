@@ -21,20 +21,6 @@ class ListingsManager(models.Manager):
         return self.get_all_jobs().filter(date__lte=today)
 
 
-class MatchesManager(models.Manager):
-
-    def get_all_matches(self):
-        return JobMatch.objects.all().order_by('-created_at')
-
-    def get_active_matches(self):
-        today = datetime.now().date()
-        return self.get_all_matches().filter(job__date__lte=today)
-
-    def get_previous_matches(self):
-        today = datetime.now().date()
-        return self.get_all_matches().filter(job__date__gte=today)
-
-
 class Job(models.Model):
     author = models.ForeignKey(User)
 
@@ -68,14 +54,12 @@ class Job(models.Model):
 class JobMatch(models.Model):
     worker = models.ForeignKey(User)
     job = models.ForeignKey(Job)
+    slug = models.SlugField(default=0, blank=True)
 
     status = models.TextField(choices=(('A', 'Accepted'), ('D', 'Denied'),
                               ('W', 'Waiting')), default='W')
 
     created_at = models.DateTimeField(auto_now_add=True)
 
-    objects = models.Manager()
-    matches = MatchesManager()
-
     def __unicode__(self):
-        return '{0}'.format(self.worker.username)
+        return '{0}'.format(self.worker.name)

@@ -1,0 +1,68 @@
+<div ng-include src="'/static/templates/layout/navbar.html'"></div>
+
+<div class="subnav hide-print">
+  <div class="container">
+    <ul class="subnav-list" ng-if="vm.filter == 'active'">
+      <li>
+        <a href="/dashboard" aria-selected="true" class="subnav-item">Active</a>
+      </li>
+      <li>
+        <a href="/dashboard/accepted" aria-selected="false" class="subnav-item">Accepted</a>
+      </li>
+      <li>
+        <a href="/dashboard/previous" aria-selected="false" class="subnav-item">Previous</a>
+      </li>
+    </ul>
+    <ul class="subnav-list" ng-if="vm.filter == 'accepted'">
+      <li>
+        <a href="/dashboard" aria-selected="false" class="subnav-item">Active</a>
+      </li>
+      <li>
+        <a href="/dashboard/accepted" aria-selected="true" class="subnav-item">Accepted</a>
+      </li>
+      <li>
+        <a href="/dashboard/previous" aria-selected="false" class="subnav-item">Previous</a>
+      </li>
+    </ul>
+    <ul class="subnav-list" ng-if="vm.filter == 'previous'">
+      <li>
+        <a href="/dashboard" aria-selected="false" class="subnav-item">Active</a>
+      </li>
+      <li>
+        <a href="/dashboard/accepted" aria-selected="false" class="subnav-item">Accepted</a>
+      </li>
+      <li>
+        <a href="/dashboard/previous" aria-selected="true" class="subnav-item">Previous</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel-body panel-medium">
+    <div class="container">
+        <div class="sticky-wrap" ng-show="vm.jobs && vm.jobs.length">
+            <table class="sticky-enabled" style="margin: 0px; width: 100%;" ng-show="vm.jobs && vm.jobs.length">
+                <thead>
+                    <tr>
+                        <th>Job Details</th>
+                        <th>Date</th>
+                        <th>Salary</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="item in vm.jobs">
+                    <td class="user-name">{{ item.job.name }}<br>{{ item.job.description }}</td>
+                    <td class="user-email">{{ item.job.date | date:'MMMM d, yyyy' }}</td>
+                    <td class="user-phone">{{ item.job.salary }}</td>
+                    <td class="user-mobile"></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-hide="vm.jobs && vm.jobs.length">
+            No {{ vm.filter }} jobs
+        </div>
+    </div>
+</div>
+
+<div ng-include src="'/static/templates/layout/footer.html'"></div>

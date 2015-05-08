@@ -16,7 +16,7 @@
         </div>
         <div class="job-item-date">
             <strong><span class="glyphicon glyphicon-calendar"></span> Date:</strong>
-            {{ job.date }}
+            {{ job.date | date:'MMMM d, yyyy' }}
         </div>
     </div>
     <div class="col-md-4 job-item-info">

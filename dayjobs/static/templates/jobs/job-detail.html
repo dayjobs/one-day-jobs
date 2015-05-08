@@ -129,7 +129,15 @@
 
         <div class="clearfix"></div>
 
+        <div class="hpadding20 ng-scope" ng-if="!isCurrentUserTrip() &amp;&amp; !trip.rejected_at">
+            <br>
+            <button type="button" class="btn btn-block btn-lg btn-success" popover-trigger="mouseenter" popover="Please log in to contact the car owner." ng-if="vm.isAuthenticated" ng-click="vm.apply()">
+                Apply to Job
+            </button>
+            <br>
         </div>
+
+      </div>
 
     </div>
     <!-- END OF RIGHT INFO -->

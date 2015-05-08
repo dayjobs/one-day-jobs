@@ -47,7 +47,7 @@
         * @desc Show snackbar with success message
         */
         function createJobSuccessFn(data, status, headers, config) {
-          $location.url('/');
+          $location.url('/listings');
           Snackbar.show('Success! job created.');
         }
 

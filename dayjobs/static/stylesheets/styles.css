@@ -31,6 +31,78 @@
     background-color: #f05f40 !important;
 }
 
+ /**
+ * Sub Navbars;
+ *
+ * Made By Ryan Wong
+ */
+
+.subnav {
+    position: relative;
+    background-color: #565a5c;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.subnav-list {
+    margin-left: -14px;
+    margin-right: -14px;
+}
+
+.list-layout, .subnav-list, .sidenav-list {
+    margin-bottom: 0;
+}
+
+.list-layout, .subnav-list, .sidenav-list {
+    margin-bottom: 0;
+}
+
+.list-unstyled, .list-layout, .subnav-list, .sidenav-list {
+    padding-left: 0;
+    list-style: none !important;
+}
+
+.subnav-item {
+    position: relative;
+    float: left;
+    color: #cacccd !important;
+}
+
+.subnav-text, .subnav-item {
+    padding: 10px 14px;
+    color: #fff;
+}
+
+.subnav-item:hover, .subnav-item:focus, .subnav-item[aria-selected="true"] {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.subnav-item[aria-selected="true"]:before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 14px;
+    right: 14px;
+    height: 4px;
+    background: #cacccd;
+}
+
+.page-container-responsive {
+    width: auto;
+}
+
+@media (min-width: 1100px)
+.page-container-responsive {
+    width: 1045px;
+}
+
+@media (min-width: 768px)
+.page-container-responsive {
+     width: 745px;
+}
 
 /**
  * Index: header;
@@ -355,4 +427,51 @@ ul.bcrumbs li {
     font-size: 12px;
     padding: 0 10px;
     text-transform: uppercase;
+}
+
+
+/**
+ * Dashboard: Table;
+ *
+ * Made By Ryan Wong
+ */
+ .sticky-wrap {
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    margin: 3em 0;
+    width: 100%;
+}
+
+ .sticky-wrap table {
+  /* border-collapse: collapse; */
+  margin-bottom: 3em;
+  width: 100%;
+  background: #fff;
+  font-family: 'Lato', Arial, sans-serif;
+}
+
+ .sticky-wrap td,  .sticky-wrap th {
+  padding: 0.75em 1.5em;
+  text-align: left;
+}
+
+ .sticky-wrap th {
+  background-color: #0079CB;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+}
+
+ .sticky-wrap tbody tr:nth-child(2n-1) {
+  background-color: #efefef;
+  transition: all .125s ease-in-out;
+}
+
+ .sticky-wrap tbody tr:hover {
+  background-color: rgba(0,121,203,.3);
+}
+
+ .sticky-wrap td.user-name {
+  text-transform: capitalize;
 }

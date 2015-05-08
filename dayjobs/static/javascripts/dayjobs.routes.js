@@ -28,6 +28,26 @@
       controller: 'JobsController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/jobs/job-list.html'
+    }).when('/dashboard', {
+      controller: 'DashboardController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/jobs/dashboard.html'
+    }).when('/dashboard/:filter', {
+      controller: 'DashboardController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/jobs/dashboard.html'
+    }).when('/listings/', {
+      controller: 'ListingsController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/jobs/listings.html'
+    }).when('/listings/jobs/:slug', {
+      controller: 'JobListingController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/jobs/job-listing.html'
+    }).when('/listings/:filter', {
+      controller: 'ListingsController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/jobs/listings.html'
     }).otherwise('/');
   }
 })();

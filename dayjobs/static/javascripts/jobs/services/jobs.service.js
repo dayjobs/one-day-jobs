@@ -22,6 +22,16 @@
       create: create,
       get: get,
       fresh: fresh,
+      apply: apply,
+      accept: accept,
+      destroy: destroy,
+      all_matches: all_matches,
+      active_matches: active_matches,
+      accepted_matches: accepted_matches,
+      previous_matches: previous_matches,
+      job_matches: job_matches,
+      active_listings: active_listings,
+      previous_listings: previous_listings,
     };
 
     return Jobs;
@@ -46,7 +56,7 @@
     * @returns {Promise}
     * @memberOf dayjobs.jobs.services.jobs
     */
-     function create(name, description, location, location_coords,  date, salary, hours, slots) {
+     function create(name, description, location, location_coords, date, salary, hours, slots) {
       return $http({method: 'POST', url: '/api/v1/jobs',
               headers: {
                 'Authorization': 'Bearer facebook ' + localStorageService.get('token')
@@ -60,6 +70,56 @@
                 'salary': salary,
                 'hours': hours,
                 'slots': slots
+              }
+              });
+    };
+
+    /**
+    * @name destroy
+    * @desc destroy a Job
+    * @returns {Promise}
+    * @memberOf dayjobs.jobs.services.jobs
+    */
+     function destroy(job) {
+      return $http({method: 'DELETE', url: '/api/v1/jobs/' + job,
+              headers: {
+                'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+              }
+              });
+    };
+
+    /**
+    * @name apply
+    * @desc Apply to a Job
+    * @returns {Promise}
+    * @memberOf dayjobs.jobs.services.jobs
+    */
+     function apply(job) {
+      return $http({method: 'post', url: '/api/v1/job_matches',
+              headers: {
+                'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+              },
+              data: {
+                'job': job,
+              }
+              });
+    };
+
+    /**
+    * @name accept
+    * @desc Accept a user to a Job
+    * @returns {Promise}
+    * @memberOf dayjobs.jobs.services.jobs
+    */
+     function accept(id, status) {
+     if(status == 'W') status = 'A';
+     else status = 'W';
+      return $http({method: 'PUT', url: '/api/v1/job_matches/' + id,
+              headers: {
+                'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+              },
+              data: {
+                'status': status,
               }
               });
     };
@@ -83,6 +143,104 @@
      */
     function fresh() {
       return $http.get('/api/v1/jobs/fresh');
+    }
+
+    /**
+     * @name all_matches
+     * @desc Get the All Job matches
+     * @returns {Promise}
+     * @memberOf dayjobs.jobs.services.Jobs
+     */
+    function all_matches() {
+      return $http({method: 'GET', url: '/api/v1/job_matches/all',
+        headers: {
+          'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+        }
+      });
+    }
+
+    /**
+     * @name active_matches
+     * @desc Get the Active Job matches
+     * @returns {Promise}
+     * @memberOf dayjobs.jobs.services.Jobs
+     */
+    function active_matches() {
+      return $http({method: 'GET', url: '/api/v1/job_matches/active',
+        headers: {
+          'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+        }
+      });
+    }
+
+    /**
+     * @name accepted_matches
+     * @desc Get the Active Job matches
+     * @returns {Promise}
+     * @memberOf dayjobs.jobs.services.Jobs
+     */
+    function accepted_matches() {
+      return $http({method: 'GET', url: '/api/v1/job_matches/accepted',
+        headers: {
+          'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+        }
+      });
+    }
+
+    /**
+     * @name previous_matches
+     * @desc Get the Active Job matches
+     * @returns {Promise}
+     * @memberOf dayjobs.jobs.services.Jobs
+     */
+    function previous_matches() {
+      return $http({method: 'GET', url: '/api/v1/job_matches/previous',
+        headers: {
+          'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+        }
+      });
+    }
+
+    /**
+     * @name get
+     * @desc Get the All Job matches linked to a job
+     * @returns {Promise}
+     * @memberOf dayjobs.jobs.services.Jobs
+     */
+    function job_matches(slug) {
+      return $http({method: 'GET', url: '/api/v1/jobs/'+ slug +'/job_matches',
+        headers: {
+          'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+        }
+      });
+    }
+
+    /**
+     * @name get
+     * @desc Get the All active Job Listings
+     * @returns {Promise}
+     * @memberOf dayjobs.jobs.services.Jobs
+     */
+    function active_listings() {
+      return $http({method: 'GET', url: '/api/v1/job_listings/active',
+        headers: {
+          'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+        }
+      });
+    }
+
+    /**
+     * @name get
+     * @desc Get the All non active Job Listings
+     * @returns {Promise}
+     * @memberOf dayjobs.jobs.services.Jobs
+     */
+    function previous_listings() {
+      return $http({method: 'GET', url: '/api/v1/job_listings/previous',
+        headers: {
+          'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+        }
+      });
     }
 
   }
