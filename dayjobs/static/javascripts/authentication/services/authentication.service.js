@@ -86,6 +86,7 @@
         me(data.authResponse.accessToken).success(
           function(data, status, headers, config) {
           // store user data
+          alert('ha');
           localStorageService.set('user', data);
           window.location = '/';
         }).error(function(data, status, headers, config) {
