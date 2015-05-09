@@ -65,7 +65,7 @@
      * @memberOf dayjobs.authentication.services.Authentication
      */
     function login() {
-      console.log('start');
+      alert('start');
       return Facebook.login(function(response) {}).then(loginSuccessFn, loginErrorFn);
 
       /**
@@ -73,12 +73,12 @@
        * @desc Set the authenticated account and redirect to index
        */
       function loginSuccessFn(data, status, headers, config) {
-        console.log('yes');
+        alert('yes');
         $http({method: 'GET', url: '/auth/convert-token', headers: {
             'Authorization': 'Bearer facebook ' + data.authResponse.accessToken}
         }).success(function(data, status, headers, config) {
-          console.log('yes 2');
-          console.log(data);
+          alert('yes 2');
+          alert(data);
           localStorageService.set('token', data);
         }).error(function(data, status, headers, config) {
           console.error('Did not covert token!');
