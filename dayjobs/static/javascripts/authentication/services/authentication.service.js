@@ -72,9 +72,12 @@
        * @desc Set the authenticated account and redirect to index
        */
       function loginSuccessFn(data, status, headers, config) {
+        console.log('yes');
         $http({method: 'GET', url: '/auth/convert-token', headers: {
             'Authorization': 'Bearer facebook ' + data.authResponse.accessToken}
         }).success(function(data, status, headers, config) {
+          console.log('yes 2');
+          console.log(data);
           localStorageService.set('token', data);
         }).error(function(data, status, headers, config) {
           console.error('Did not covert token!');
