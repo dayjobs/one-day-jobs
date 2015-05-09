@@ -55,7 +55,7 @@
     * @memberOf dayjobs.layout.controllers.NavbarController
     */
     function login() {
-      console.log('login');
+      alert('login');
       Authentication.login();
     }
 
