@@ -42,6 +42,7 @@
         },
         function(newVal) {
           if (newVal) {
+            console.log('ready');
             vm.facebookReady = true;
           }
         }

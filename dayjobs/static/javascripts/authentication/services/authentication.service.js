@@ -65,6 +65,7 @@
      * @memberOf dayjobs.authentication.services.Authentication
      */
     function login() {
+      console.log('start');
       return Facebook.login(function(response) {}).then(loginSuccessFn, loginErrorFn);
 
       /**
