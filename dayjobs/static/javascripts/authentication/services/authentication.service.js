@@ -23,7 +23,6 @@
     var Authentication = {
       getAuthenticatedAccount: getAuthenticatedAccount,
       isAuthenticated: isAuthenticated,
-      login: login,
       logout: logout,
       unauthenticate: unauthenticate
     };
