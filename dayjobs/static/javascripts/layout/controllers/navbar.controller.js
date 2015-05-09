@@ -42,7 +42,6 @@
         },
         function(newVal) {
           if (newVal) {
-            console.log('ready');
             vm.facebookReady = true;
           }
         }
@@ -55,7 +54,6 @@
     * @memberOf dayjobs.layout.controllers.NavbarController
     */
     function login() {
-      alert('login');
       Authentication.login();
     }
 
