@@ -22,9 +22,33 @@
 
 <div class="panel-body panel-medium">
     <div class="container">
-        <div ng-repeat="item in vm.jobs">
-          <job job="item"></job>
+        <div class="search">
+        <form role="form" name="searchForm">
+            <div class="row">
+                <div class="col-md-7 col-custom">
+                    <div class="form-group">
+                        <input placeholder="Where do you want to work?" places-auto-complete types="['establishment']" ng-model="vm.location" type='text' class="form-control" />
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-custom">
+                    <div class="form-group">
+                        <input type="date" class="form-control" placeholder="Date" ng-model="vm.date">
+                    </div>
+                </div>
+                <div class="col-md-2 col-custom">
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-block" ng-click="vm.search()" >
+                            <span class="glyphicon glyphicon-search"></span> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
         </div>
+
+        <job ng-repeat="item in vm.jobs" job="item"></job>
+
          <div class="row" ng-hide="vm.jobs && vm.jobs.length">
           <div class="col-sm-12 no-jobs-here">
             <em>The are no fresh_jobs here.</em>

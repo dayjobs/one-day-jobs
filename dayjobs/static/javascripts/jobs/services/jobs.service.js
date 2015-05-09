@@ -22,6 +22,7 @@
       create: create,
       get: get,
       fresh: fresh,
+      search: search,
       apply: apply,
       accept: accept,
       destroy: destroy,
@@ -143,6 +144,26 @@
      */
     function fresh() {
       return $http.get('/api/v1/jobs/fresh');
+    }
+
+    /**
+     * @name search
+     * @desc Search jobs
+     * @returns {Promise}
+     * @memberOf dayjobs.jobs.services.Jobs
+     */
+    function search(location, date) {
+
+      if (location && date) {
+        return $http.get('/api/v1/jobs?location=' + location + '&date=' + date);
+      }
+      else if (location) {
+        return $http.get('/api/v1/jobs?location=' + location);
+      }
+      else if(date) {
+        return $http.get('/api/v1/jobs?date=' + date);
+      }
+      else return $http.get('/api/v1/jobs');
     }
 
     /**

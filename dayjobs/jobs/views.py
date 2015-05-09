@@ -13,7 +13,7 @@ from jobs.serializers import (JobSerializer, JobMatchSerializer)
 
 class JobViewSet(viewsets.ModelViewSet):
     lookup_field = 'slug'
-    queryset = Job.objects.order_by('-created_at')
+    queryset = Job.listings.get_active_jobs()
     serializer_class = JobSerializer
     paginate_by = 30
     paginate_by_param = 'page_size'
@@ -27,6 +27,24 @@ class JobViewSet(viewsets.ModelViewSet):
             return (permissions.AllowAny(),)
 
         return (IsAuthorOfJob(), )
+
+    def get_queryset(self):
+        queryset = self.queryset
+        location = self.request.QUERY_PARAMS.get('location', None)
+        date = self.request.QUERY_PARAMS.get('date', None)
+
+        if location is not None:
+            print location
+            queryset = queryset.filter(location__icontains=location)
+        if date is not None:
+            date = date.split(' ')
+            date =  datetime.strptime('/'.join(date[1:4]), "%b/%d/%Y")
+            print date
+            queryset = queryset.filter(date__year=date.year,
+                                            date__month=date.month,
+                                            date__day=date.day)
+
+        return queryset
 
     def perform_create(self, serializer):
         instance = serializer.save(author=self.request.user)
@@ -89,7 +107,7 @@ class UserJobMatchesViewSet(viewsets.ViewSet, generics.ListAPIView):
 
 
 class FreshJobsView(generics.ListAPIView):
-    queryset = Job.objects.all().order_by('-created_at')[:5]
+    queryset = Job.listings.get_active_jobs()[:5]
     serializer_class = JobSerializer
 
 

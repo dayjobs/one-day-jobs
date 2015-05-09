@@ -24,7 +24,7 @@
       controller: 'JobDetailController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/jobs/job-detail.html'
-    }).when('/jobs', {
+    }).when('/search', {
       controller: 'JobsController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/jobs/job-list.html'
