@@ -44,6 +44,10 @@
       controller: 'JobListingController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/jobs/job-listing.html'
+    }).when('/listings/jobs/:slug/edit', {
+      controller: 'EditJobController',
+      controllerAs: 'vm',
+      templateUrl: '/static/templates/jobs/edit-job.html'
     }).when('/listings/:filter', {
       controller: 'ListingsController',
       controllerAs: 'vm',

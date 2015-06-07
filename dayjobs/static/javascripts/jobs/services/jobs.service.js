@@ -53,12 +53,35 @@
     /**
     * @name create
     * @desc Create a new Job
-    * @param {string} content The content of the new Job
     * @returns {Promise}
     * @memberOf dayjobs.jobs.services.jobs
     */
      function create(name, description, location, location_coords, date, salary, hours, slots) {
       return $http({method: 'POST', url: '/api/v1/jobs',
+              headers: {
+                'Authorization': 'Bearer facebook ' + localStorageService.get('token')
+              },
+              data: {
+                'name': name,
+                'description': description,
+                'location': location,
+                'location_coords': location_coords,
+                'date': date,
+                'salary': salary,
+                'hours': hours,
+                'slots': slots
+              }
+              });
+    };
+
+    /**
+    * @name update
+    * @desc Update a Job
+    * @returns {Promise}
+    * @memberOf dayjobs.jobs.services.jobs
+    */
+     function update(job, name, description, location, location_coords, date, salary, hours, slots) {
+      return $http({method: 'PUT', url: '/api/v1/jobs' + job,
               headers: {
                 'Authorization': 'Bearer facebook ' + localStorageService.get('token')
               },
@@ -223,7 +246,7 @@
     }
 
     /**
-     * @name get
+     * @name job_matches
      * @desc Get the All Job matches linked to a job
      * @returns {Promise}
      * @memberOf dayjobs.jobs.services.Jobs
@@ -237,7 +260,7 @@
     }
 
     /**
-     * @name get
+     * @name active_listings
      * @desc Get the All active Job Listings
      * @returns {Promise}
      * @memberOf dayjobs.jobs.services.Jobs

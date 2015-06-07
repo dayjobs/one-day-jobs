@@ -6,7 +6,6 @@
 
  .navbar-brand img {
     max-width:100px;
-    margin-top: -7px;
  }
 
 .avatar-img
@@ -195,11 +194,15 @@ section {
     box-shadow: none;
 }
 
-.panel-body button {
-     padding-left: 20px;
+.panel-body .btn {
+    padding-left: 20px;
     padding-right: 20px;
     height: 40px;
     box-shadow: none;
+}
+
+.panel-body .btn a{
+    color: #fff !important;
 }
 
 /**
