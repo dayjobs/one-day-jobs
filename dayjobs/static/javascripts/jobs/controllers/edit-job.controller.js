@@ -9,15 +9,46 @@
     .module('dayjobs.jobs.controllers')
     .controller('EditJobController', EditJobController);
 
-  EditJobController.$inject = ['$location', '$rootScope', '$scope', 'Authentication', 'Snackbar', 'Jobs', 'GeoCoder'];
+  EditJobController.$inject = ['$location', '$rootScope', '$routeParams', '$scope', 'Authentication', 'Snackbar', 'Jobs', 'GeoCoder'];
 
   /**
   * @namespace EditJobController
   */
-  function EditJobController($location, $rootScope, $scope, Authentication, Snackbar, Jobs, GeoCoder) {
+  function EditJobController($location, $rootScope, $routeParams, $scope, Authentication, Snackbar, Jobs, GeoCoder) {
     var vm = this;
 
+    vm.job = undefined;
     vm.submit = submit;
+    activate();
+
+    function activate() {
+      var slug = $routeParams.slug;
+
+      Jobs.get(slug).then(jobsuccessFn, jobErrorFn);
+
+      /**
+      * @name jobsuccessFn
+      */
+      function jobsuccessFn(data, status, headers, config) {
+        vm.job = data.data;
+        vm.name = vm.job.name;
+        vm.description = vm.job.description;
+        vm.salary = vm.job.salary;
+        vm.salary = vm.job.salary;
+        vm.hours = vm.job.hours;
+        vm.slots = vm.job.slots_count;
+      }
+
+
+      /**
+      * @name jobErrorFn
+      * @desc Redirect to index and show error Snackbar
+      */
+      function jobErrorFn(data, status, headers, config) {
+        $location.url('/');
+        Snackbar.error('That job does not exist.');
+      }
+    }
 
     /**
     * @name submit
